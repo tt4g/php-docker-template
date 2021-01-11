@@ -12,4 +12,5 @@ services:
       - ./.editorconfig:/workspace/.editorconfig:cached
       - ./.gitattributes:/workspace/.gitattributes:cached
       - ./.gitignore:/workspace/.gitignore:cached
+      - ./composer.json:/workspace/composer.json:cached
       - ./README.md:/workspace/README.md:cached
