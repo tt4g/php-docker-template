@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  learn-php:
+    # tty is required if Visual Studio Code attaches to this container.
+    tty: true
+    volumes:
+      # Update this to wherever you want VS Code to mount the folder of your project
+      - .:/workspace:cached
