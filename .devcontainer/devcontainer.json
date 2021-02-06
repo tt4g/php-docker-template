@@ -20,14 +20,17 @@
         "terminal.integrated.shell.linux": null,
         "phpcs.standard": "./phpcs.ruleset.xml",
         "php-cs-fixer.executablePath": "${workspaceFolder}/vendor/bin/php-cs-fixer",
-        "php-cs-fixer.onsave": true
+        "php-cs-fixer.onsave": true,
+        "phpunit.php": "php",
+        "phpunit.phpunit": "${workspaceFolder}/vendor/bin/phpunit"
     },
     // Add the IDs of extensions you want installed when the container is created.
     "extensions": [
-        "junstyle.php-cs-fixer",
-        "neilbrayfield.php-docblocker",
-        "ikappas.phpcs"
-    ]
+		"junstyle.php-cs-fixer",
+		"neilbrayfield.php-docblocker",
+		"ikappas.phpcs",
+		"emallin.phpunit"
+	]
     // Use 'forwardPorts' to make a list of ports inside the container available locally.
     // "forwardPorts": [],
     // Uncomment the next line if you want start specific services in your Docker Compose config.

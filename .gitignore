@@ -1,5 +1,5 @@
-# Created by https://www.toptal.com/developers/gitignore/api/vim,composer,phpstorm+all,visualstudiocode,phpcodesniffer
-# Edit at https://www.toptal.com/developers/gitignore?templates=vim,composer,phpstorm+all,visualstudiocode,phpcodesniffer
+# Created by https://www.toptal.com/developers/gitignore/api/vim,composer,phpstorm+all,phpcodesniffer,visualstudiocode,phpunit
+# Edit at https://www.toptal.com/developers/gitignore?templates=vim,composer,phpstorm+all,phpcodesniffer,visualstudiocode,phpunit
 
 ### Composer ###
 composer.phar
@@ -104,6 +104,21 @@ modules.xml
 # Sonarlint plugin
 .idea/sonarlint
 
+### PHPUnit ###
+# Covers PHPUnit
+# Reference: https://phpunit.de/
+
+# Generated files
+.phpunit.result.cache
+.phpunit.cache
+
+# PHPUnit
+/app/phpunit.xml
+/phpunit.xml
+
+# Build data
+/build/
+
 ### Vim ###
 # Swap
 [._]*.s[a-v][a-z]
@@ -136,7 +151,7 @@ tags
 .history
 .ionide
 
-# End of https://www.toptal.com/developers/gitignore/api/vim,composer,phpstorm+all,visualstudiocode,phpcodesniffer
+# End of https://www.toptal.com/developers/gitignore/api/vim,composer,phpstorm+all,phpcodesniffer,visualstudiocode,phpunit
 
 # php-cs-fixer
 .php_cs.cache
