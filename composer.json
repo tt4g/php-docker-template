@@ -2,5 +2,8 @@
     "name": "tt4g/learn-php",
     "type": "project",
     "license": "Apache License 2.0",
-    "require": {}
+    "require-dev": {
+        "squizlabs/php_codesniffer": "3.5.8",
+        "friendsofphp/php-cs-fixer": "2.18.2"
+    }
 }
