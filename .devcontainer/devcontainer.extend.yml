@@ -6,11 +6,4 @@ services:
     tty: true
     volumes:
       # Update this to wherever you want VS Code to mount the folder of your project
-      - ./.devcontainer:/workspace/.devcontainer:cached
-      - ./docker:/workspace/docker:cached
-      - ./src:/workspace/src:cached
-      - ./.editorconfig:/workspace/.editorconfig:cached
-      - ./.gitattributes:/workspace/.gitattributes:cached
-      - ./.gitignore:/workspace/.gitignore:cached
-      - ./composer.json:/workspace/composer.json:cached
-      - ./README.md:/workspace/README.md:cached
+      - .:/workspace:cached
