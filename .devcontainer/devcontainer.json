@@ -29,7 +29,8 @@
 		"junstyle.php-cs-fixer",
 		"neilbrayfield.php-docblocker",
 		"ikappas.phpcs",
-		"emallin.phpunit"
+		"emallin.phpunit",
+		"felixfbecker.php-debug"
 	]
     // Use 'forwardPorts' to make a list of ports inside the container available locally.
     // "forwardPorts": [],

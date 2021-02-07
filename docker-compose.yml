@@ -9,6 +9,7 @@ services:
         dockerfile: Dockerfile
       volumes:
         - ./src/:/var/www/html
+        - ./docker/php/php.ini-production:/usr/local/etc/php/conf.d/php.ini
       networks:
         - php-learn-network
       env_file: ./docker/php/.env
