@@ -11,7 +11,7 @@ services:
       - ./src/:/var/www/html
       - ./docker/php/php.ini-production:/usr/local/etc/php/conf.d/php.ini
     networks:
-      - php-learn-network
+      - learn-php-network
     env_file: ./docker/php/.env
     ulimits:
       memlock:
@@ -29,7 +29,7 @@ services:
     ports:
       - "80:80"
     networks:
-      - php-learn-network
+      - learn-php-network
     env_file: ./docker/nginx/.env
     ulimits:
       memlock:
@@ -39,6 +39,6 @@ services:
       - learn-php
 
 networks:
-  php-learn-network:
-    name: php-learn-network
+  learn-php-network:
+    name: learn-php-network
     driver: bridge
