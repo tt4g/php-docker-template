@@ -17,7 +17,29 @@
     "workspaceFolder": "/workspace",
     // Set *default* container specific settings.json values on container create.
     "settings": {
-        "terminal.integrated.shell.linux": null,
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "terminal.integrated.profiles.linux": {
+            "bash": {
+                "path": "bash",
+                "args": [
+                    "-l"
+                ]
+            },
+            "zsh": {
+                "path": "zsh"
+            },
+            "fish": {
+                "path": "fish"
+            },
+            "tmux": {
+                "path": "tmux",
+                "icon": "terminal-tmux"
+            },
+            "pwsh": {
+                "path": "pwsh",
+                "icon": "terminal-powershell"
+            }
+        },
         "phpcs.standard": "./phpcs.ruleset.xml",
         "php-cs-fixer.executablePath": "${workspaceFolder}/vendor/bin/php-cs-fixer",
         "php-cs-fixer.onsave": true,
@@ -26,12 +48,12 @@
     },
     // Add the IDs of extensions you want installed when the container is created.
     "extensions": [
-		"junstyle.php-cs-fixer",
-		"neilbrayfield.php-docblocker",
-		"ikappas.phpcs",
-		"emallin.phpunit",
-		"felixfbecker.php-debug"
-	]
+        "junstyle.php-cs-fixer",
+        "neilbrayfield.php-docblocker",
+        "ikappas.phpcs",
+        "emallin.phpunit",
+        "felixfbecker.php-debug"
+    ]
     // Use 'forwardPorts' to make a list of ports inside the container available locally.
     // "forwardPorts": [],
     // Uncomment the next line if you want start specific services in your Docker Compose config.
