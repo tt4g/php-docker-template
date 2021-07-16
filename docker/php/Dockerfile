@@ -5,10 +5,13 @@ RUN apt-get update \
     && apt-get install -y --no-install-recommends \
     # Using git for development.
     git \
+    # libzip-dev: enable PHP zip extension with `docker-php-ext-install zip` command.
+    zip unzip libzip-dev \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
 RUN pecl install xdebug-3.0.4 \
+    && docker-php-ext-install zip \
     && docker-php-ext-enable xdebug
 
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
