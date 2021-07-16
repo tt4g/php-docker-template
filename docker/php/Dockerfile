@@ -8,7 +8,7 @@ RUN apk --update --no-cache --virtual build-dependencies add \
     g++ \
     make
 
-RUN pecl install xdebug-3.0.2 \
+RUN pecl install xdebug-3.0.4 \
     && docker-php-ext-enable xdebug
 
 RUN apk del build-dependencies
