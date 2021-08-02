@@ -7,5 +7,9 @@ services:
     volumes:
       # Update this to wherever you want VS Code to mount the folder of your project
       - .:/workspace:cached
-      - ./docker/php/php.ini-development:/usr/local/etc/php/conf.d/php.ini
-      - ./docker/php/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
+      - type: bind
+        source: ./docker/php/php.ini-development
+        target: /usr/local/etc/php/conf.d/php.ini
+      - type: bind
+        source: ./docker/php/xdebug.ini
+        target: /usr/local/etc/php/conf.d/xdebug.ini
