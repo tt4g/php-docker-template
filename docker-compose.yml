@@ -9,12 +9,22 @@ services:
       context: ./docker/php
       dockerfile: Dockerfile
     volumes:
+      - type: volume
+        source: learn-php-fpm-socket
+        target: /var/run/php-fpm
+        volume:
+          nocopy: true
       - type: bind
         source: ./src/
         target: /var/www/html
       - type: bind
         source: ./docker/php/php.ini-production
         target: /usr/local/etc/php/conf.d/php.ini
+      # Override `/usr/local/etc/php-fpm.d/zz-docker.conf` settings in container.
+      # See: https://github.com/docker-library/php/issues/241
+      - type: bind
+        source: ./docker/php/zzz-docker-override.conf
+        target: /usr/local/etc/php-fpm.d/zzz-docker-override.conf
     networks:
       - learn-php-network
     env_file: ./docker/php/.env
@@ -30,6 +40,11 @@ services:
       context: ./docker/nginx
       dockerfile: Dockerfile
     volumes:
+      - type: volume
+        source: learn-php-fpm-socket
+        target: /var/run/php-fpm
+        volume:
+          nocopy: true
       - type: bind
         source: ./docker/nginx/nginx.conf
         target: /etc/nginx/nginx.conf
@@ -54,3 +69,7 @@ networks:
   learn-php-network:
     name: learn-php-network
     driver: bridge
+
+volumes:
+  # For sharing php-fpm socket.
+  learn-php-fpm-socket:

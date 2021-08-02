@@ -1,0 +1,4 @@
+.env
+php.ini-development
+php.ini-production
+xdebug.ini
