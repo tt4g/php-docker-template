@@ -2,8 +2,14 @@ version: '3.8'
 
 services:
   learn-php:
-    # tty is required if Visual Studio Code attaches to this container.
-    tty: true
+    # The hostname "host.docker.internal" must be able to resolve to an IP 
+    # address on the host machine.
+    # This is because the Visual Studio Code debugger will not be able to
+    # connect to xdebug if xdebug cannot resolve the hostname 
+    # "host.docker.internal" (specified `xdebug.client_host = host.docker.internal` 
+    # in `xdebug.ini`) to the IP address of the host machine.
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     volumes:
       # Update this to wherever you want VS Code to mount the folder of your project
       - .:/workspace:cached
