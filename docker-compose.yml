@@ -8,6 +8,10 @@ services:
     build:
       context: ./docker/php
       dockerfile: Dockerfile
+      args:
+        PHP_VERSION: 8.0.10
+        XDEBUG_VERSION: 3.0.4
+        COMPOSER_VERSION: 2.1.6
     volumes:
       - type: volume
         source: learn-php-fpm-socket
@@ -39,6 +43,8 @@ services:
     build:
       context: ./docker/nginx
       dockerfile: Dockerfile
+      args:
+        NGINX_VERSION: 1.21.1
     volumes:
       - type: volume
         source: learn-php-fpm-socket
