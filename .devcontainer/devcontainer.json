@@ -52,7 +52,8 @@
         "neilbrayfield.php-docblocker",
         "ikappas.phpcs",
         "emallin.phpunit",
-        "felixfbecker.php-debug"
+        "felixfbecker.php-debug",
+        "bmewburn.vscode-intelephense-client"
     ]
     // Use 'forwardPorts' to make a list of ports inside the container available locally.
     // "forwardPorts": [],
