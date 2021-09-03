@@ -40,20 +40,21 @@
                 "icon": "terminal-powershell"
             }
         },
-        "phpcs.standard": "./.phpcs.xml",
-        "php-cs-fixer.executablePath": "${workspaceFolder}/vendor/bin/php-cs-fixer",
-        "php-cs-fixer.onsave": true,
+        "[php]": {
+            "editor.defaultFormatter": "wongjn.php-sniffer"
+        },
+        "phpSniffer.executablesFolder": "./vendor/bin",
+        "phpSniffer.standard": "./.phpcs.xml",
         "phpunit.php": "php",
         "phpunit.phpunit": "${workspaceFolder}/vendor/bin/phpunit"
     },
     // Add the IDs of extensions you want installed when the container is created.
     "extensions": [
-        "junstyle.php-cs-fixer",
         "neilbrayfield.php-docblocker",
-        "ikappas.phpcs",
         "emallin.phpunit",
         "felixfbecker.php-debug",
-        "bmewburn.vscode-intelephense-client"
+        "bmewburn.vscode-intelephense-client",
+        "wongjn.php-sniffer"
     ]
     // Use 'forwardPorts' to make a list of ports inside the container available locally.
     // "forwardPorts": [],
