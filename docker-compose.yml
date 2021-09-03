@@ -1,7 +1,7 @@
 version: "3.8"
 
 services:
-  php-docker-template:
+  php-docker-template-php:
     image: php-docker-template-php
     container_name: php-docker-template-php
     build:

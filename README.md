@@ -37,7 +37,7 @@ name and volume name as well.
 Don't forget to change the service name of `docker-compose` in
 [.devcontainer/devcontainer.json](.devcontainer/devcontainer.json).
 
-```json
+```json5
 {
     "service": "php-docker-template-php"
             //  ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -64,12 +64,12 @@ Update `pathMappings` of the debug configuration
 **NOTE:** This debug configuration is provided by
 [PHP Debug](https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-debug).
 
-```json
+```json5
 {
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Listen for XDebug",
+            "name": "Listen for Xdebug",
             "type": "php",
             "request": "launch",
             "port": 9003,
