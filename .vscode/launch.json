@@ -11,12 +11,7 @@
             "port": 9003,
             "pathMappings": {
                 "/var/www/html": "${workspaceFolder}/src"
-            },
-            "ignore": [
-                "**/vendor/composer/**/*.php",
-                "**/vendor/php-cs-fixer/**/*.php",
-                "**/vendor/squizlabs/php_codesniffer/**/*.php"
-            ]
+            }
         }
     ]
 }
