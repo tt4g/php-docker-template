@@ -40,7 +40,7 @@
                 "icon": "terminal-powershell"
             }
         },
-        "phpcs.standard": "./phpcs.ruleset.xml",
+        "phpcs.standard": "./.phpcs.xml",
         "php-cs-fixer.executablePath": "${workspaceFolder}/vendor/bin/php-cs-fixer",
         "php-cs-fixer.onsave": true,
         "phpunit.php": "php",
