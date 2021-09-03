@@ -1,5 +1,5 @@
 {
-    "name": "tt4g/learn-php",
+    "name": "tt4g/php-docker-template",
     "type": "project",
     "license": "Apache License 2.0",
     "require-dev": {

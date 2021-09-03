@@ -1,10 +1,9 @@
 version: "3.8"
 
 services:
-
-  learn-php:
-    image: learn-php
-    container_name: learn-php
+  php-docker-template:
+    image: php-docker-template-php
+    container_name: php-docker-template-php
     build:
       context: ./docker/php
       dockerfile: Dockerfile
@@ -14,7 +13,7 @@ services:
         COMPOSER_VERSION: 2.1.6
     volumes:
       - type: volume
-        source: learn-php-fpm-socket
+        source: php-docker-template-fpm-socket
         target: /var/run/php-fpm
         volume:
           nocopy: true
@@ -24,22 +23,23 @@ services:
       - type: bind
         source: ./docker/php/php.ini-production
         target: /usr/local/etc/php/conf.d/php.ini
-      # Override `/usr/local/etc/php-fpm.d/zz-docker.conf` settings in container.
-      # See: https://github.com/docker-library/php/issues/241
+        # Override `/usr/local/etc/php-fpm.d/zz-docker.conf` configuration in
+        # Docker container.
+        # See: https://github.com/docker-library/php/issues/241
       - type: bind
         source: ./docker/php/zzz-docker-override.conf
         target: /usr/local/etc/php-fpm.d/zzz-docker-override.conf
     networks:
-      - learn-php-network
+      - php-docker-template-network
     env_file: ./docker/php/.env
     ulimits:
       memlock:
         soft: -1
         hard: -1
 
-  learn-php-nginx:
-    image: learn-php-nginx
-    container_name: learn-php-nginx
+  php-docker-template-nginx:
+    image: php-docker-template-nginx
+    container_name: php-docker-template-nginx
     build:
       context: ./docker/nginx
       dockerfile: Dockerfile
@@ -47,7 +47,7 @@ services:
         NGINX_VERSION: 1.21.1
     volumes:
       - type: volume
-        source: learn-php-fpm-socket
+        source: php-docker-template-fpm-socket
         target: /var/run/php-fpm
         volume:
           nocopy: true
@@ -62,20 +62,20 @@ services:
     ports:
       - "80:80"
     networks:
-      - learn-php-network
+      - php-docker-template-network
     env_file: ./docker/nginx/.env
     ulimits:
       memlock:
         soft: -1
         hard: -1
     depends_on:
-      - learn-php
+      - php-docker-template-php
 
 networks:
-  learn-php-network:
-    name: learn-php-network
+  php-docker-template-network:
+    name: php-docker-template-network
     driver: bridge
 
 volumes:
   # For sharing php-fpm socket.
-  learn-php-fpm-socket:
+  php-docker-template-fpm-socket:
