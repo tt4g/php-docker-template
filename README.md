@@ -98,17 +98,19 @@ Check [.phpcs.xml](./.phpcs.xml) and set the coding conventions.
 
 #### Xdebug
 
-Set `xdebug.start_with_request = trigger` in
+`xdebug.start_with_request = yes` is set In
 [docker/php/xdebug.ini](docker/php/xdebug.ini).
-Visual Studio Code extension
-[PHP Debug](https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-debug)
-works with this setting.
+`xdebug.start_with_request = yes` will always start `xdebug`, but will print an
+error message
+`"Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: host.docker.internal:9003 (through xdebug.client_host/xdebug.client_port) :-("`
+on stderr (`STDERR`) if the xdebug server connection times out when running `php` command.
+If this error message bothers you, you can suppress the log output with
+`xdebug.log_level = 0`. Or, specify `xdebug.start_with_request = trigger` and
+set `XDEBUG_TRIGGER=1` parameter to `$_GET`, `$_POST`, or `$_COOKIE` for each
+request.
 
-**NOTE:**  If set `xdebug.start_with_request = yes`, there will be a small delay
-because `xdebug` will make a connection every time `php` command is executed.
-
-If other debugging extensions are to be used, or if `xdebug` does not work,
-change the settings.
+**NOTE:** Refer to the official Xdebug documentation for the differences in
+behavior between the two settings.
 
 ##### `php.ini`
 
