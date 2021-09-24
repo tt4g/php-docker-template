@@ -48,11 +48,9 @@
         "felixfbecker.php-debug",
         "bmewburn.vscode-intelephense-client",
         "wongjn.php-sniffer"
-    ],
+    ]
     // Use 'forwardPorts' to make a list of ports inside the container available locally.
-    "forwardPorts": [
-        9003 // xdebug
-    ],
+    // "forwardPorts": [],
     // Uncomment the next line if you want start specific services in your Docker Compose config.
     // "runServices": [],
     // Uncomment the next line if you want to keep your containers running after VS Code shuts down.
