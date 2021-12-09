@@ -1,5 +1,5 @@
 ARG PHP_VERSION=8.0.10
-ARG COMPOSER_VERSION=2.1.6
+ARG COMPOSER_VERSION=2.1.14
 
 # https://hub.docker.com/_/composer
 FROM composer:${COMPOSER_VERSION} as composer-provider

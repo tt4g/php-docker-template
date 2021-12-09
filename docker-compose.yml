@@ -10,7 +10,7 @@ services:
       args:
         PHP_VERSION: 8.0.10
         XDEBUG_VERSION: 3.0.4
-        COMPOSER_VERSION: 2.1.6
+        COMPOSER_VERSION: 2.1.14
     volumes:
       - type: volume
         source: php-docker-template-fpm-socket
