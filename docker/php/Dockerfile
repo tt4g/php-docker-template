@@ -10,7 +10,7 @@ FROM php:${PHP_VERSION}-fpm-buster
 # Install Composer.
 COPY --from=composer-provider /usr/bin/composer /usr/bin/composer
 
-ARG XDEBUG_VERSION=3.0.4
+ARG XDEBUG_VERSION=3.1.2
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
